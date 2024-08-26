@@ -223,7 +223,7 @@ const Login = () => {
             checkEmail()
           }}
         >
-          使用電子郵件使用
+          使用電子郵件登入
         </Button>
       </CardFooter>
     </Card>
