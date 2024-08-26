@@ -5,10 +5,13 @@ import {
   RouterProvider,
 } from "react-router-dom"
 
+import Login from "./pages/Login/Login"
 import Layout from "./pages/Layout/Layout"
+import Activities from "./pages/Activities/Activities";
 import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary"
 
 import "./index.css";
+import { redirect } from "elysia";
 
 const ChildComponent = () => {
   return (
@@ -25,12 +28,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorBoundary />,
     children: [
       {
-        path: "",
+        index: true,
+        loader: async () => redirect("/activities"),
+      },
+      {
+        path: "child",
         element: <ChildComponent />,
       },
+      {
+        path: "activities",
+        element: <Activities />,
+      }
     ],
   },
-]);
+  {
+    path: "login",
+    element: <Login />,
+  }
+])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
