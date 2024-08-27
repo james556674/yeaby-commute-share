@@ -20,10 +20,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorBoundary />,
     children: [
-      {
-        index: true,
-        loader: async () => redirect("/activities"),
-      },
+      // {
+      //   index: true,
+      //   loader: async () => redirect("/activities"),
+      // },
       {
         path: "activities",
         element: <Activities />,
@@ -40,13 +40,14 @@ const router = createBrowserRouter([
       // {
       //   path: "account",
       //   errorElement: <ErrorBoundary />,
-      // }
+      // },
+      {
+        path: "login",
+        element: <Login />,
+        errorElement: <ErrorBoundary />,
+      }
     ],
   },
-  {
-    path: "login",
-    element: <Login />,
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById("root")).render(

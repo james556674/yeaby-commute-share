@@ -21,8 +21,15 @@ const Layout = () => {
   const navigate = useNavigate()
 
   if (!localStorage.getItem("yeabyAdmin")) {
-    window.location.href = "/login"
-    return
+    return (
+      <div className="flex min-h-screen w-full flex-col">
+        <div
+          className="h-full"
+        >
+          <Outlet />
+        </div>
+      </div>
+    )
   }
 
   return (
