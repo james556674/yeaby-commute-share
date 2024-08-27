@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/yeaby-commute-share/sw.js', { scope: '/yeaby-commute-share/' })})}
