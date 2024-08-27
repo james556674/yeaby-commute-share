@@ -14,14 +14,14 @@ const Activities = () => {
   const navigate = useNavigate()
   return (
     <div
+      className="h-full w-full"
       style={{
-        height: "100%",
         width: "100%",
         overflow: "hidden",
-        position: "fixed",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#f0f2f5",
       }}
     >
       <Card className="w-[350px]" style={{textAlign: "center"}}>
