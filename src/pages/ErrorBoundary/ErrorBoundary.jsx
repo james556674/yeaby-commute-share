@@ -1,25 +1,56 @@
-import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faRoadBarrier } from "@fortawesome/free-solid-svg-icons"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { useNavigate } from "react-router-dom"
+import YeabyCarLogo from "../../../public/imgs/car.png"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card"
 
-const MainContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  position: fixed;
-`
 
 const ErrorBoundary = () => {
+  const navigate = useNavigate()
   return (
-    <MainContainer>
-      <div className="wip-container">
-        {/* page is still working */}
-        <FontAwesomeIcon icon={faRoadBarrier} />
-        <h1>Work in Progress</h1>
-        <p>Page is still working</p>
-      </div>
-    </MainContainer>
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f0f2f5",
+      }}
+    >
+      <Card className="w-[350px]" style={{ textAlign: "center" }}>
+        <Avatar
+          style={{
+            width: "120px",
+            height: "120px",
+            margin: "0 auto",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            navigate("/activities")
+          }}
+        >
+          <AvatarImage
+
+            src={YeabyCarLogo}
+          />
+        </Avatar>
+        <CardHeader>
+          活動首頁
+        </CardHeader>
+        <CardContent>
+          Working in progress
+        </CardContent>
+        <CardFooter className="flex justify-between">
+        </CardFooter>
+      </Card>
+    </div>
   )
 }
 
-export default ErrorBoundary;
+export default ErrorBoundary

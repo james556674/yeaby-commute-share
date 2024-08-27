@@ -13,13 +13,6 @@ import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary"
 import "./index.css";
 import { redirect } from "elysia";
 
-const ChildComponent = () => {
-  return (
-    <div>
-      <h1>Child Component</h1>
-    </div>
-  )
-}
 
 const router = createBrowserRouter([
   {
@@ -32,13 +25,22 @@ const router = createBrowserRouter([
         loader: async () => redirect("/activities"),
       },
       {
-        path: "child",
-        element: <ChildComponent />,
-      },
-      {
         path: "activities",
         element: <Activities />,
-      }
+        errorElement: <ErrorBoundary />,
+      },
+      // {
+      //   path: "matching",
+      //   errorElement: <ErrorBoundary />,
+      // },
+      // {
+      //   path: "notifications",
+      //   errorElement: <ErrorBoundary />,
+      // },
+      // {
+      //   path: "account",
+      //   errorElement: <ErrorBoundary />,
+      // }
     ],
   },
   {
