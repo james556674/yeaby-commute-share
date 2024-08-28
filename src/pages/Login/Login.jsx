@@ -85,7 +85,7 @@ const Login = () => {
               letterSpacing: "1px",
             }}
           >
-            帳號註冊
+            帳號註冊(Register)
           </CardTitle>
           <CardDescription>
             填寫您的電子郵件以建立您的填寫
