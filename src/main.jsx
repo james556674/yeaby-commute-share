@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login"
 import Layout from "./pages/Layout/Layout"
 import Activities from "./pages/Activities/Activities";
 import ErrorBoundary from "./pages/ErrorBoundary/ErrorBoundary"
+import Account from "./pages/Account/Account"
 
 import "./index.css";
 import { redirect } from "elysia";
@@ -40,6 +41,7 @@ const router = createBrowserRouter([
       {
         path: "account",
         errorElement: <ErrorBoundary />,
+        element: <Account />,
       },
       
     ],

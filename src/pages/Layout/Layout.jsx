@@ -14,16 +14,16 @@ import {
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import YeabyCarLogo from "../../../public/imgs/car.png"
-import { links as allLinks, mobileFooterLinks } from "./util"
+import { links as allLinks, mobileFooterLinks, logout } from "./util"
 
 const Layout = () => {
-  // const localStorage = window.localStorage
-  // const navigate = useNavigate()
+  const localStorage = window.localStorage
+  const navigate = useNavigate()
 
-  // if (!localStorage.getItem("yeabyAdmin")) {
-  //   window.location.href = "/login"
-  //   return
-  // }
+  if (!localStorage.getItem("yeabyAdmin")) {
+    window.location.href = "/login"
+    return
+  }
 
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -106,7 +106,16 @@ const Layout = () => {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => {
+                  logout({
+                    localStorage,
+                    navigate
+                  })
+                }}
+              >
+                Logout
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

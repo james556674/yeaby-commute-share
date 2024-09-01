@@ -43,3 +43,11 @@ export const mobileFooterLinks = [
     )
   }
 ]
+
+export const logout = ({
+  localStorage,
+  navigate
+}) => {
+  localStorage.removeItem("yeabyAdmin")
+  navigate("/login")
+}
